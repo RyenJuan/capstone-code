@@ -1,4 +1,5 @@
-# capstone-code
+# climate-controlled-chamber
+<img src="https://github.com/user-attachments/assets/42077c91-8199-4bc1-8e18-dd5d936ccbd7" width=375>
 <h1> Subsystem Control and Data Collection </h1>
 
 The code was written by Ryan Huang and Demitri Kokoros for an environmental control chamber for use in Professor Xiaoyu Tang's microfluidics research. 
