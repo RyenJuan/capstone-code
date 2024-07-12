@@ -37,7 +37,11 @@ The humidifier, dehumidifier, fans, valves, and sensors are regulated by control
 <h2>Data Collection and Graphing</h2>
 <ol>
   <li>Find two files generated after main.py was manually ended (temp_0.csv and humidity_1.csv)</li>
+  <li>Set printToPython to false in control.ino
   <li>Modify the file paths in graph.py to the locations of temp_0.csv and humidity_1.csv</li>
+  <li>Within humidity_0.csv, add the total time the experiment ran for as a new row at the end of the csv file. This duration can be found in the python console of main.py after the keyboard interrupt.</li>
+  <li>Run graph.py</li>
+
 </ol>
 
 <h2>Future Tasks</h2>
