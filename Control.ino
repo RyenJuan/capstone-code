@@ -359,20 +359,20 @@ void loop() {
   //***************************************************************************************************
 
 
-  // while (true) {
-  // if (!printToPython) {
-  //   Serial.println("Status: Heating");
-  // }
-  //   sense(); // Update all the sensor measurements for the current iteration
+  while (true) {
+  if (!printToPython) {
+    Serial.println("Status: Heating");
+  }
+    sense(); // Update all the sensor measurements for the current iteration
 
-  //   // CHAMBER INLET FAN
-  //   digitalWrite(PIN9, HIGH);
+    // CHAMBER INLET FAN
+    digitalWrite(PIN9, HIGH);
 
-  //   if (abs(CHAMBER_AVG_TEMP - TARGET_TEMP) < HTOL) { 
-  //     // Temperature has been overshot within the heater tolerance. Move onto Humidifier/Dehumidifier 
-  //     break; 
-  //   }
-  // }
+    if (abs(CHAMBER_AVG_TEMP - TARGET_TEMP) < HTOL) { 
+      // Temperature has been overshot within the heater tolerance. Move onto Humidifier/Dehumidifier 
+      break; 
+    }
+  }
 
 
   //***************************************************************************************************
