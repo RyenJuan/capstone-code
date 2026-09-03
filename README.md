@@ -2,7 +2,14 @@
 <img src="https://github.com/user-attachments/assets/42077c91-8199-4bc1-8e18-dd5d936ccbd7" width=375>
 <h1> Subsystem Control and Data Collection </h1>
 
-The code was written by Ryan Huang and Demitri Kokoros for an environmental control chamber for use in Professor Xiaoyu Tang's microfluidics research. 
+The code was written by Ryan Huang and Demitri Kokoros for an environmental control chamber for use in Professor Xiaoyu Tang's microfluidics research. The goal was to design a transparent chamber to investigate droplet evaporation under controlled temperature and relative humidity. The limiting constraint was to minimize convection inside the chamber. The temperature range to control was 20C to 60C and the relative humidity range to control was 3% to 95%.
+
+The solution we went with for control was: 
+
+<ul>
+  <li>Relative Humidity - Ultrasonic humidifier, Dessiccant air filter </li>
+  <li>Temperature - Heating element via PID, Peltier coolers</li>
+</ul> 
 
 The humidifier, dehumidifier, fans, valves, and sensors are regulated by control.ino. The gantry system is contorlled by acuator_control.ino. Real time data collection is done in main.py. Temperature and humidity data over time is plotted in graph.py
 
@@ -37,7 +44,7 @@ The humidifier, dehumidifier, fans, valves, and sensors are regulated by control
 
 <h2>Data Collection and Graphing</h2>
 <ol>
-  <li>Find two files generated after main.py was manually ended (temp_0.csv and humidity_1.csv)</li>
+  <li>Look for two files generated after main.py was manually ended (temp_0.csv and humidity_1.csv)</li>
   <li>Set printToPython to false in control.ino
   <li>Modify the file paths in graph.py to the locations of temp_0.csv and humidity_1.csv</li>
   <li>Within humidity_0.csv, add the total time the experiment ran for as a new row at the end of the csv file. This duration can be found in the python console of main.py after the keyboard interrupt.</li>
@@ -46,7 +53,7 @@ The humidifier, dehumidifier, fans, valves, and sensors are regulated by control
 </ol>
 
 <h2>Future Tasks</h2>
-A lot of these files were written in a hurry to collect data as most of us do not plan on working on this after Capstone Day so there are a lot of additional tasks to improve the readability, functionality, and modularity.
+A lot of these files were written in a hurry to collect data as most of us cannot work on this after Capstone Day so there are a lot of additional tasks to improve the readability, functionality, and modularity.
 <br></br>
 <ul>
   <li>Combine main.py and graph.py into a single python file that runs collects data, exports it, and graphs it​</li>
@@ -59,7 +66,7 @@ A lot of these files were written in a hurry to collect data as most of us do no
 
   <li>Fix the real-time graphing code inside main.py. Data can be plotted in real-time in a continuosly updating plot within main.py. However, this stopped working at some point and I'm not sure why​</li>
 
-  <li>Create a separate Arduino script to act as a "playground". Allowing users to run specific valves and fans via keypress. Currently, control.ino runs everything sequentially (cooling, heating, humidifying), making it difficult to debug specific subsytems until it reaches the subsystem in the sequence  ​</li>
+  <li>Create a separate Arduino script to act as a "testing playground". Allowing users to run specific valves and fans via keypress. Currently, control.ino runs everything sequentially (cooling, heating, humidifying), making it difficult to debug specific subsytems until it reaches the subsystem in the sequence  ​</li>
 </ul>
 
 
